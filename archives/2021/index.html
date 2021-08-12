@@ -28,17 +28,22 @@
 <title>归档：2021 | 建兴的博客</title>
 
 
+    <meta name="keywords" content="博客,blog,java,计算机">
+
 
 
 
     <!-- OpenGraph -->
  
-    <meta property="og:type" content="website">
+    <meta name="description" content="建兴的个人博客">
+<meta property="og:type" content="website">
 <meta property="og:title" content="建兴的博客">
 <meta property="og:url" content="http://f000.top/archives/2021/index.html">
 <meta property="og:site_name" content="建兴的博客">
+<meta property="og:description" content="建兴的个人博客">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="BuildNew">
+<meta property="article:tag" content="博客,blog,java,计算机">
 <meta name="twitter:card" content="summary_large_image">
 
 
@@ -53,6 +58,8 @@
     
 
      
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+ 
 
     <!-- custom head -->
 
@@ -129,6 +136,8 @@
         This is a test
     </h2>
     
+        <p> 我不去想是否能够成功，既然选择了远方，便只顾风雨兼程</p>
+    
 </div>
 <div class="post-entry__meta">
     <a href="/archives/2021/08/" class="post-meta__date button">2021-08-12</a>
@@ -148,18 +157,44 @@
 </main>
 
             <footer class="footer">
-    
-    
-
-
-    
      
+    <a href="#" class="button" id="b2t" aria-label="回到顶部" title="回到顶部">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+    
+
+
+    
+    
+    
+        <span id="busuanzi_container_site_uv" hidden>
+            <span></span>
+            <span id="busuanzi_value_site_uv"></span>
+            <span>Viewers</span>
+            
+                <span>&amp;nbsp;&amp;nbsp;&amp;nbsp;|</span>
+            
+        </span>
+    
+    
+        <span id="busuanzi_container_site_pv" hidden>
+            <span></span>
+            <span id="busuanzi_value_site_pv"></span>
+            <span>Views</span>
+            
+        </span>
+    
+ 
  
 
  
     
     
-    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
+<!--    <p>Powered by <a href="https://f000.top" target="_blank">BuildNew</a>-->
+    <p>备案编号：滇ICP备2021005610号</p>
 </footer>
 
         </div>
@@ -185,6 +220,41 @@
     
  
 
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('false'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
  
 
  
