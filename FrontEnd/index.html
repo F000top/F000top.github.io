@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>前端学习笔记 | 建兴的博客</title>
+
+
+    <meta name="keywords" content="学习, 博客,blog,java,计算机">
+
+
+
+
+    <!-- OpenGraph -->
+ 
+    <meta name="description" content="前端学习笔记 不学前端怎么改自己的blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端学习笔记">
+<meta property="og:url" content="http://f000.top/FrontEnd/index.html">
+<meta property="og:site_name" content="建兴的博客">
+<meta property="og:description" content="前端学习笔记 不学前端怎么改自己的blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://f000.top/images/f.png">
+<meta property="article:published_time" content="2021-08-19T11:07:32.000Z">
+<meta property="article:modified_time" content="2021-08-20T12:50:47.622Z">
+<meta property="article:author" content="BuildNew">
+<meta property="article:tag" content="学习">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://f000.top/images/f.png">
+
+
+    
+<link rel="stylesheet" href="/css/style/main.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/default.css" media="none" onload="this.media='all'">
+        
+    
+
+    
+    
+
+    
+
+     
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+ 
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">建兴的博客</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/archives/" class="navbar-menu button">全部文章</a>
+                
+            </div>
+        
+        
+        
+
+        
+        
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">全部文章</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        前端学习笔记
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2021/08/" class="post-meta__date button">2021-08-19</a>
+        
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+    <aside class="post-side">
+        <div class="post-side__toc">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E5%A4%A9"><span class="toc-number">1.</span> <span class="toc-text">第一天</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vscode%E5%AE%89%E8%A3%85%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">vscode安装：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%A0%E4%B8%AA%E5%B0%8F%E7%BB%86%E8%8A%82"><span class="toc-number">1.2.</span> <span class="toc-text">几个小细节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE"><span class="toc-number">1.3.</span> <span class="toc-text">HTML常用标签</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E9%A2%98%E6%A0%87%E7%AD%BE"><span class="toc-number">1.3.1.</span> <span class="toc-text">标题标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AE%B5%E8%90%BD%E6%A0%87%E7%AD%BE"><span class="toc-number">1.3.2.</span> <span class="toc-text">段落标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8D%A2%E8%A1%8C%E6%A0%87%E7%AD%BE"><span class="toc-number">1.3.3.</span> <span class="toc-text">换行标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%A0%87%E7%AD%BE"><span class="toc-number">1.3.4.</span> <span class="toc-text">文本格式化标签</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B2%97%E4%BD%93"><span class="toc-number">1.3.4.1.</span> <span class="toc-text">粗体</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%9C%E4%BD%93"><span class="toc-number">1.3.4.2.</span> <span class="toc-text">斜体</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%8B%E5%88%92%E7%BA%BF"><span class="toc-number">1.3.4.3.</span> <span class="toc-text">下划线</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E7%BA%BF"><span class="toc-number">1.3.4.4.</span> <span class="toc-text">删除线</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#div%E5%92%8Cspan%E6%A0%87%E7%AD%BE"><span class="toc-number">1.3.5.</span> <span class="toc-text">div和span标签</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#div"><span class="toc-number">1.3.5.1.</span> <span class="toc-text">div</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#span"><span class="toc-number">1.3.5.2.</span> <span class="toc-text">span</span></a></li></ol></li></ol></li></ol></li></ol>
+        </div>
+    </aside>
+    <a class="btn-toc button" id="btn-toc" tabindex="0">
+        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
+        </svg>
+    </a>
+    <div class="toc-menus" id="toc-menus">
+        <div class="toc-title">文章目录</div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E5%A4%A9"><span class="toc-number">1.</span> <span class="toc-text">第一天</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vscode%E5%AE%89%E8%A3%85%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">vscode安装：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%A0%E4%B8%AA%E5%B0%8F%E7%BB%86%E8%8A%82"><span class="toc-number">1.2.</span> <span class="toc-text">几个小细节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE"><span class="toc-number">1.3.</span> <span class="toc-text">HTML常用标签</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E9%A2%98%E6%A0%87%E7%AD%BE"><span class="toc-number">1.3.1.</span> <span class="toc-text">标题标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AE%B5%E8%90%BD%E6%A0%87%E7%AD%BE"><span class="toc-number">1.3.2.</span> <span class="toc-text">段落标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8D%A2%E8%A1%8C%E6%A0%87%E7%AD%BE"><span class="toc-number">1.3.3.</span> <span class="toc-text">换行标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%A0%87%E7%AD%BE"><span class="toc-number">1.3.4.</span> <span class="toc-text">文本格式化标签</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B2%97%E4%BD%93"><span class="toc-number">1.3.4.1.</span> <span class="toc-text">粗体</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%9C%E4%BD%93"><span class="toc-number">1.3.4.2.</span> <span class="toc-text">斜体</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%8B%E5%88%92%E7%BA%BF"><span class="toc-number">1.3.4.3.</span> <span class="toc-text">下划线</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E7%BA%BF"><span class="toc-number">1.3.4.4.</span> <span class="toc-text">删除线</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#div%E5%92%8Cspan%E6%A0%87%E7%AD%BE"><span class="toc-number">1.3.5.</span> <span class="toc-text">div和span标签</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#div"><span class="toc-number">1.3.5.1.</span> <span class="toc-text">div</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#span"><span class="toc-number">1.3.5.2.</span> <span class="toc-text">span</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+
+
+<article class="post post__with-toc content-card">
+    <div class="post__header">
+    
+        <div class="post-thumbnail" style="background-image: url('/images/f.png');"></div>
+    
+</div>
+    <div class="post__content">
+        <h1>前端学习笔记</h1>
+<p>不学前端怎么改自己的blog</p>
+<span id="more"></span>
+<h2 id="第一天">第一天</h2>
+<blockquote>
+<p>时间：2021年8月20日11:26:06</p>
+</blockquote>
+<p>g🐶</p>
+<p><strong>😆</strong></p>
+<h3 id="vscode安装：">vscode安装：</h3>
+<hr>
+<ul>
+<li>vscode下载地址：<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></li>
+</ul>
+<p><img src="/FrontEnd/image-20210820112957117.png" alt="image-20210820112957117"></p>
+<ul>
+<li>
+<p>vscode插件推荐</p>
+<ul>
+<li>
+<p>Chinese：实现简体中文</p>
+<p><img src="/FrontEnd/image-20210820113452267.png" alt="image-20210820113452267"></p>
+</li>
+<li>
+<p>open in browser：实现右击可以在浏览器预览</p>
+</li>
+</ul>
+<p><img src="/FrontEnd/image-20210820113534604.png" alt="image-20210820113534604"></p>
+<p><img src="/FrontEnd/image-20210820113559748.png" alt="image-20210820113559748"></p>
+</li>
+</ul>
+<h3 id="几个小细节">几个小细节</h3>
+<hr>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span> </span><br><span class="line">	文档类型声明标签，告诉浏览器这个页面才去HTML5版本来显示页面</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-CN&quot;</span>&gt;</span></span><br><span class="line">    告诉浏览器或者搜索引擎，这个是一个中文网站，本站采用中文来显示</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span>  </span><br><span class="line">    必须写，UTF-8来保存文字，如果不写就会乱码</span><br></pre></td></tr></table></figure>
+<h3 id="HTML常用标签">HTML常用标签</h3>
+<hr>
+<h4 id="标题标签">标题标签</h4>
+<p>HTML提供了6个等级的网页标题</p>
+<p><img src="/FrontEnd/image-20210820195713655.png" alt="image-20210820195713655"></p>
+<p>h是单词head的缩写</p>
+<p><strong>特点</strong></p>
+<p>1、变粗变大</p>
+<p>2、独占一行</p>
+<p><strong>标签语义</strong></p>
+<p>作为标题使用，并且根据重要性递减</p>
+<h4 id="段落标签">段落标签</h4>
+<p><img src="/FrontEnd/image-20210820201018589.png" alt="image-20210820201018589"></p>
+<p>p是paragraph的缩写</p>
+<p>两个段落之间有空格</p>
+<h4 id="换行标签">换行标签</h4>
+<p><img src="/FrontEnd/image-20210820201106826.png" alt="image-20210820201106826"></p>
+<p>br是break的缩写</p>
+<p>是个单标签</p>
+<p>只是简单换一个行，两个段落之间不空格</p>
+<h4 id="文本格式化标签">文本格式化标签</h4>
+<h5 id="粗体">粗体</h5>
+<p><strong></strong>（语义更加强烈）</p>
+<p><b></b></p>
+<h5 id="斜体">斜体</h5>
+<p><i></i>（语义更加强烈）</p>
+<p><em></em></p>
+<h5 id="下划线">下划线</h5>
+<p><ins></ins>（语义更加强烈）</p>
+<p><u></u></p>
+<h5 id="删除线">删除线</h5>
+<p><s></s></p>
+<h4 id="div和span标签">div和span标签</h4>
+<p><img src="/FrontEnd/image-20210820202623385.png" alt="image-20210820202623385"></p>
+<p>没有语义，当做一个盒子，可以放东西</p>
+<p>div是division的缩写，表示分割</p>
+<p>span以为跨度，跨距</p>
+<h5 id="div">div</h5>
+<p>自己独占一行</p>
+<h5 id="span">span</h5>
+<p>一行上可以放很多个</p>
+
+    </div>
+    
+    <div class="post__license">
+        <p>
+            <strong>本文作者：</strong>buildnew
+        </p>
+        <p>
+            <strong>
+                本文链接：
+            </strong>
+            <a href="http://f000.top/FrontEnd/">http://f000.top/FrontEnd/</a>
+        </p>
+        
+    </div>
+ 
+    <div class="post-footer__meta"><p>更新于 2021-08-20</p></div> 
+    <div class="post-entry__tags"><a href="/tags/%E5%AD%A6%E4%B9%A0/" class="post-tags__link button"># 学习</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+                <a href="/typora/" class="nav__link">
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
+                    </div>
+                    <div>
+                        <div class="nav__label">
+                            Previous Post
+                        </div>
+                        <div class="nav__title">
+                            typora使用技巧
+                        </div>
+                    </div>
+                </a>
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            Git study notes
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+    <div class="post__comments post__with-toc content-card" id="comment">
+        
+    <h4>评论</h4>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="tcomment" class="twikoo_thread"></div>
+
+
+
+    </div>
+
+
+
+</main>
+
+            <footer class="footer">
+     
+    <a href="#" class="button" id="b2t" aria-label="回到顶部" title="回到顶部">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+    
+
+
+    
+    
+    
+        <span id="busuanzi_container_site_uv" hidden>
+            <span></span>
+            <span id="busuanzi_value_site_uv"></span>
+            <span>Viewers</span>
+            
+                <span>|</span>
+            
+        </span>
+    
+    
+        <span id="busuanzi_container_site_pv" hidden>
+            <span></span>
+            <span id="busuanzi_value_site_pv"></span>
+            <span>Views</span>
+            
+        </span>
+    
+ 
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021&nbsp;-&nbsp;2021 <a href="/">建兴的博客</a>
+        </p>
+    
+    
+<!--    <p>Powered by <a href="https://f000.top" target="_blank">BuildNew</a>-->
+    <p>滇ICP备2021005610号</p>
+</footer>
+
+        </div>
+         
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('false'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    <script>
+        function loadComment() {
+            let e;
+            (e = document.createElement("script")).src = 'https://cdn.jsdelivr.net/npm/twikoo@0.3.2/dist/twikoo.all.min.js',
+            document.body.appendChild(e);
+            e.onload = () => {
+                twikoo.init({
+                    envId: 'twikoo-0gv0i4p12778a6e6',
+                    el: '#tcomment'
+                });
+            };
+        }
+    
+        var runningOnBrowser = typeof window !== "undefined";
+        var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
+        var supportsIntersectionObserver = runningOnBrowser && "IntersectionObserver" in window;
+    
+        setTimeout(function () {
+            if (!isBot && supportsIntersectionObserver) {
+                var comment_observer = new IntersectionObserver(function(entries) {
+                    if (entries[0].isIntersecting) {
+                        loadComment();
+                        comment_observer.disconnect();
+                    }
+                }, { threshold: [0] });
+                comment_observer.observe(document.getElementById('comment'));
+            } else {
+                loadComment();
+            }
+        }, 1);
+    </script>
+
+
+
+
+    </body>
+</html>
