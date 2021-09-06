@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    <meta charset="utf-8">
+
+    
+
+    <!-- 渲染优化 -->
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" >
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--icon-->
+
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    
+    
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+    
+        <link rel="mask-icon" href="/images/safari-pinned-tab.svg">
+    
+
+
+    <!-- meta -->
+
+
+<title>好文摘抄及其分析 | 杨星博客</title>
+
+
+    <meta name="keywords" content="学习, 博客,blog,java,计算机">
+
+
+
+
+    <!-- OpenGraph -->
+ 
+    <meta name="description" content="站在​巨人的​肩膀上📖">
+<meta property="og:type" content="article">
+<meta property="og:title" content="好文摘抄及其分析">
+<meta property="og:url" content="http://f000.top/nicearticle/index.html">
+<meta property="og:site_name" content="杨星博客">
+<meta property="og:description" content="站在​巨人的​肩膀上📖">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://f000.top/nicearticle/v2-3846906ea3ded1fabbf1a98c891527fb.png">
+<meta property="og:image" content="http://f000.top/nicearticle/v2-fd41fb2f262b60e5ce40a84246c01df8_720w.jpg">
+<meta property="article:published_time" content="2021-09-06T02:10:21.000Z">
+<meta property="article:modified_time" content="2021-09-06T16:35:55.774Z">
+<meta property="article:author" content="BuildNew">
+<meta property="article:tag" content="学习">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://f000.top/nicearticle/v2-3846906ea3ded1fabbf1a98c891527fb.png">
+
+
+    
+<link rel="stylesheet" href="/css/style/main.css">
+ 
+
+    
+    
+        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/default.css" media="none" onload="this.media='all'">
+        
+    
+
+    
+    
+
+    
+
+     
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+ 
+
+    <!-- custom head -->
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+    <body>
+        <div id="app">
+            <header class="header">
+    <div class="header__left">
+        <a href="/" class="button">
+            <span class="logo__text">Ystar</span>
+        </a>
+    </div>
+    <div class="header__right">
+        
+            <div class="navbar__menus">
+                
+                    <a href="/" class="navbar-menu button">首页</a>
+                
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
+                    <a href="/archives/" class="navbar-menu button">全部文章</a>
+                
+                    <a href="/friends/" class="navbar-menu button">友链</a>
+                
+            </div>
+        
+        
+        
+
+        
+        
+
+        
+            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
+            <div class="dropdown-menus" id="dropdown-menus">
+                
+                    <a href="/" class="dropdown-menu button">首页</a>
+                
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
+                    <a href="/archives/" class="dropdown-menu button">全部文章</a>
+                
+                    <a href="/friends/" class="dropdown-menu button">友链</a>
+                
+            </div>
+        
+    </div>
+</header>
+
+
+            <main class="main">
+    
+
+<div class="post-title">
+    <h1 class="post-title__text">
+        好文摘抄及其分析
+    </h1>
+    <div class="post-title__meta">
+        <a href="/archives/2021/09/" class="post-meta__date button">2021-09-06</a>
+        
+ 
+        
+    
+    
+
+
+ 
+
+ 
+    </div>
+</div>
+
+
+
+<article class="post content-card">
+    <div class="post__header">
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            本文最后更新于 &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; 天前，文中部分描述可能已经过时。
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-09-07"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 50) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
+</div>
+    <div class="post__content">
+        <hr>
+<p>站在​巨人的​肩膀上📖</p>
+<span id="more"></span>
+<p><strong><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/428778047/answer/2104665532">为什么现在的年轻人内心都越来越悲观？</a></strong></p>
+<hr>
+<p>作者：玄睛<br>
+链接：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/428778047/answer/2104665532">https://www.zhihu.com/question/428778047/answer/2104665532</a><br>
+来源：知乎<br>
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<p>大概是因为他们太传统，太保守，眼界太窄，最严重的是对这个社会和政府还保有希望。</p>
+<p>最后的结果是面对越来越艰难而且看不到希望的人生，越来越悲观——就好像六七年前的我。</p>
+<p>现在的我就不一样。</p>
+<p>狗屁传统，凭什么人就要结婚，就要为一堆砖头做一辈子奴隶，就为了满足基因的那点繁衍欲望，或者就为了让父母赞赏你？抱歉，但是当我领悟到人生的本质是孤独，人不管是主观上还是客观上都只能为自己，靠自己，作自己的时候，以上理由在我看来都是bullshit。</p>
+<p>狗屁保守，世界在变，旧有的思想和传统能够不变化。在这个变化的世界里面，应该积极顺应变化的规则，不要在头脑里面保留太多的”古董“和”文物“。典型的如同现在很激烈的男女问题，在我看来，根本原因还是社会变化太快，而太多人思想还停留在农业时代——尤其是男性，女性跟着本能走，反而适应的更快。</p>
+<p>眼界的问题也是历史和教育的问题，父母一辈只能看到那么大一点的世界，所以他们传授给子女的经验也就那么大点：要好好读书，要考上好大学，要找个好工作，要攒钱买房结婚生孩子。好好一个自由自在的人生，被这些家长搞得和最无聊的又肝又氪还没啥正反馈的垃圾游戏一样无聊。</p>
+<p>当然了，家长这一套也不能说不对，换一个正常的社会环境，这也是一条大众的、中庸的路子。问题是现在的这个社会环境，它不正常啊。</p>
+<p>这就要说到最后一个问题，你还对这个社会和政府保有希望吗？</p>
+<p>指望它能够控制房价，抬高劳动者收入，让自己能够安居乐业？</p>
+<p>指望它能够约束资本家，让自己不用996和加班？</p>
+<p>指望它能够给出实质性的政策，补偿生育带来的负担和损失？</p>
+<p>如果你对这些不抱有希望，那我觉得明智的人不会在这种情况下选择父母给出的那条路，否则你就是一个糊涂蛋，一方面不抱希望，一方面还糊涂得试图在一个沙漠里面建花园。</p>
+<p>如果你还是抱有希望的，那我只能拍拍你的肩膀，同情的说一句，哥们，加油，坚持住。</p>
+<hr>
+<p>[comment]</p>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/people/fen-hong-ou-ge">粉红讴歌</a></p>
+<p>我倒是不反对他们站在资产阶级那边，就是希望他们改个名，老祖宗也说了，名正则言顺<img src="/nicearticle/v2-3846906ea3ded1fabbf1a98c891527fb.png" alt="[惊喜]"></p>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/people/3f825648913659a016f4b7ce810af5e9">mac mico</a>回复<a target="_blank" rel="noopener" href="https://www.zhihu.com/people/83aec8e17606e381d190d022e9e2d83e">war rotak</a>11 小时前</p>
+<p>主流是资本主义，剥削无可厚非，但是能做到让老百姓掏空6个钱包的，确实前无古人</p>
+<hr>
+<p><strong>对于这个高房价我真的是无力吐槽，工资就这么点，以后全部拿去还房贷，换一大堆钢筋水泥，没意思。但是不买房子的话怎么讨媳妇？怎么生小娃娃，虽然现在我感觉我自己繁衍后代的欲望已经不是那么强烈了，我宁愿自己消费，自己过得爽，但是父母那关怎么过啊？他们都这么老了😟。</strong></p>
+<p><strong>就算不还房贷，也要每个月交房租给房东，这他妈的和以前的地主有什么区别？</strong></p>
+<hr>
+<p><strong><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/456951856/answer/1967951978">定向选调生政策红利还能存在几年？</a></strong></p>
+<hr>
+<p>作者：匿名用户<br>
+链接：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/456951856/answer/1967951978">https://www.zhihu.com/question/456951856/answer/1967951978</a><br>
+来源：知乎<br>
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<p>都是太年轻…多见几轮就没事了。</p>
+<p>80年代大家都是挤破脑袋进体制内。公务员和军队是一等人，国企事业单位次之。私企？个体户？那是资本主义的尾巴，哪天说割就割了。</p>
+<p>然而，90年代实现双轨制。造导弹的不如卖茶叶蛋的，一大堆体制内下海经商，国企后来迎来改制（破产）潮，公务员也不受待见。90年代最热的，其实是外企，福利好，地位高，管理先进。那时候，宝洁、强生、辉瑞、联合利华这些公司也是一波一波收割名校毕业生。另外一个热门就是出国，由于基础科学出国更容易，在90年代末00初造就了“21世纪是xx的世纪”的传说</p>
+<p>然后亚洲金融风暴、国企抓大放小，然后发现外企天花板明显，国企反而强势起来。至于21世纪的科学，大家都明白怎么回事了。电网两油三大运营商四大行，在00-10年代最热。基建、垄断相关专业，这时候最热门，比如土建、电气、通信等等，在08年的4万亿之后达到顶峰。</p>
+<p>过去十年，垄断国企被迫割肉让利，民营企业——尤其是高科技和互联网民企，一轮一轮冒出来。华为、阿里、腾讯、字节等等成为大家热衷去的企业。前些年大家还在吹嘘互联网颠覆这个颠覆那个，这两年是不是开始被敲打了？</p>
+<p>去年疫情来了，大家发现这个泡沫也就这么回事。而十八大以来持续整顿公务员队伍，导致公务员的管理明显改善。国家对政府执政能力要求提高，也增加了对高学历公务员的需求，造就了这几年繁荣。</p>
+<p>其实太阳底下无新鲜事。80年代也搞过提升学历、干部年轻化。但当年去当公务员的大学生发展一定好吗？</p>
+<p>我认识一个80年代厦门大学毕业的，在一个偏远县耗了一辈子，卡在正科上不去，都快退休了。80年代，全部大学生才几十万一年，想想当时的厦大什么概念？</p>
+<p>今天跟八九十年代一样，大家都热衷于进体制内。体制内就已经不是最好的机会了（当然也不会太差），进去之后要服从组织分配，卡在某个地方、某个位置几十年很常见：国家最缺公务员的地方，一般发展都比较差。而发展好的地方常常不缺人，自然没什么上升空间。</p>
+<p>今天看得到的最大机会，其实还是是去亚非拉。就像八九十年代最大的机会是闯广东一样。不要说亚非拉乱，广东90年代到00初能好到哪里去？飞车党了解下？孙志刚了解下？</p>
+<p>但这个说着容易，实际上呢？换到当时，你怎么知道要去深圳而不是汕头海南？都是经济特区，汕头还有李嘉诚等潮汕商人加持，当时谁知道汕头会发展这么差？亦或者闯海南，遇到房地产泡沫破裂，背一辈子债？</p>
+<p>所以，你现在去闯亚非拉，哪知道哪个地方会成为深圳，哪个地方成为海南，哪个地方成为汕头？判断错了，可是要命的事情（可能真的是字面意义上要命）。</p>
+<p>人人都以为自己是算无遗策的诸葛亮，找个好的路径就能躺赢。</p>
+<p>但是看看诸葛亮自己怎么说的：</p>
+<p>夫难平（评）者，事也。…凡事如是，难可逆见。臣鞠躬尽瘁，死而后已。至于成败利钝，非臣之明所能逆睹也。</p>
+<p>补充</p>
+<ol>
+<li>还有人跟我说什么公务员待遇稳定，不会失业…我就再数一数：</li>
+</ol>
+<p>80年代冷战还没结束，就搞了大裁军。越南阿富汗还在打仗，苏东接下来就剧变，危机存亡之秋，我国先把军队裁掉了100万…</p>
+<p>90年代国企维持不下去，但工人阶级是我们国家的统治阶级，社会主义的工人怎么能失业？但我们国家说社会主义没有失业，但是可以下岗嘛。看成败、人生豪迈、只不过是重头再来…</p>
+<p>2001年加入WTO，国家扩大开放，按理外企应该生意越做越大，谁知道外企会被国货打得节节败退，整个部门的裁…</p>
+<p>2008-2010时一群人吹垄断国企躺着挣钱、能源银行乃百业之母。你看这十来年强迫几大垄断企业降价降了多少次？</p>
+<p>为什么总有人相信我们国家会养闲人，而且一养就是三五十年呢？这几十年我们宪法都改了几次了？</p>
+<ol start="2">
+<li>历史潮流滚滚向前，因果轮回难以预料。</li>
+</ol>
+<p>你问我，怎么才能不落因果、不入轮回.</p>
+<p>我只能回答：不昧因果，不惧轮回。</p>
+<hr>
+<p><strong>确实，个人的努力在历史的洪流面前不足一提，每个年代都有每个年代的机遇，我的机遇会在哪里呢？现在还看不见，我只能是努力的提升自己，广泛阅读思考，等待它静静的到来。</strong></p>
+<hr>
+<h6 id></h6>
+<p><strong>读什么书能增加权术？</strong></p>
+<hr>
+<p>政治斗争的两大要点：借上压下，拢多欺少。但要注意不要让“多”成为“上”的忌讳。</p>
+<p>三个核心要素：信息，实力，主动，关于这请参考这个答案：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/20630125/answer/88793686">有哪些分析讲解权谋、权术的书籍值得推荐？ - 知乎</a>，其中提到了一些书目。</p>
+<p>这三点，是玩弄诡计的人应该尽力获得，同时尽力阻止别人获得的，分别对应《孙子兵法》的三个重要理论“知己知彼”“避实击虚”“致人而不致于人”、以及可以粗略对应到《韩非子》的三个要点“术”“势”和“法”，以及《棋经》的三条箴言“路虚而无眼则先觑”“不若因之而自补”“宁输数子勿失一先”。</p>
+<p>补充一本：余华清的《权术论》。读来大呼过瘾。以下是我读《权术论》的笔记：</p>
+<p>权术的八种基本形式：政变，驭臣，愚民，谄媚，韬晦，谗毁，结党，游说</p>
+<p><img src="/nicearticle/v2-fd41fb2f262b60e5ce40a84246c01df8_720w.jpg" alt="img"></p>
+<p>一、政变</p>
+<p>目标：夺取君位</p>
+<p>参与者：皇族，近臣，权臣</p>
+<p>手段：冒险性，诡秘性</p>
+<p>时机：随机性，突发性</p>
+<p>后果：成王败寇</p>
+<p>类型：王室内乱，改朝换代，社会革命</p>
+<p>手段：暗杀，兵变，伪诏，设局</p>
+<p>二、驭臣</p>
+<p>手段：笼络赏赐，防范惩罚，树威立尊，平衡牵制</p>
+<p>臣对君的反制：抗君，欺君，谀君，避君</p>
+<p>三、愚民</p>
+<p>造神：人种神异化，人身神秘化，人格神圣化</p>
+<p>愚民：攘外安内，仁政王道，道德绳索，宗教麻醉，思想禁锢</p>
+<p>四、谄媚</p>
+<p>特征：实用性，无耻性，技巧性</p>
+<p>手段：奉承吹捧，自我贬损，取悦讨好，顺阿逢迎，巴结投靠</p>
+<p>五、韬晦</p>
+<p>手段：志向掩饰，才能掩饰，名望掩饰，感情掩饰，生理掩饰</p>
+<p>场合：君主大权旁落，臣属功高震主，君权正常移交，君权非正常移交，同僚猜疑嫉妒，敌国政治争斗</p>
+<p>特征：目的的明确性、进取性、隐蔽性，作用的时效性，影响的广泛性</p>
+<p>六、谗毁</p>
+<p>目的：险恶性</p>
+<p>目标：明确性（才华出众，行为不俗，机运亨通，丧权失势）</p>
+<p>内容：编造性</p>
+<p>后果：致命性</p>
+<p>手段：栽赃陷害，旁敲侧击，挑拨离间，造谣诽谤</p>
+<p>七、结党</p>
+<p>类型：利益冲突，权力组合，政见分歧</p>
+<p>目的：与君主抗争，与权臣争斗，擅权自重，卖身投靠</p>
+<p>门径：家族血缘，地域乡亲，联姻裙带，门生故吏</p>
+<p>八、游说</p>
+<p>场合：游说劝诱，宣传鼓动，外交应酬，威胁恫吓，无理狡辩</p>
+<p>技巧：比拟隐喻，借题发挥；话中有话，弦外有音；夸大其辞，极而言之；闪烁其词，故弄玄虚；恢言妙语，以谐寓庄；三复斯言，故调重弹；首鼠两端，模棱两可；见风使舵，八面玲珑；装聋作哑，三缄其口；出尔反尔，自食其言；狡言诡辩，似是而非</p>
+<p>附一、兵家的影响</p>
+<p>本质：以诡胜正</p>
+<p>原则：出奇制胜，知己知彼，弱敌强己</p>
+<p>附二、商道的影响</p>
+<p>本质：以利侵义</p>
+<p>贿赂的用处：收买拉拢，止兵解危，挑拨离间，买官求爵，鬻狱赎罪</p>
+<p>附三、理论思维的运用</p>
+<p>性恶说：使用防恶、制恶的正当性</p>
+<p>利己主义：利己的正当性</p>
+<p>功利主义：强调重要性、必要性，强调目的、效果</p>
+<p>附四：权术人物的心态</p>
+<p>目的：私利</p>
+<p>程度：无厌</p>
+<p>行动：不择手段</p>
+<p>野心者：竞争心理，投机心理，嫉妒心理，发愤心理，冒险心理</p>
+<p>志士仁人：不得信任，不得如志，不得好报，不得理解，不得始终</p>
+<p>士大夫：清高遁世，难得糊涂（抑己，容恶，中庸，推责），任性放纵，状态愚忠、非争、受难</p>
+<p>附五：古代的君权</p>
+<p>君权集立法权、司法权、政务决策权、最高名分独占权于一身</p>
+<p>权术对官僚的意义：敲门砖，护官符，润滑剂</p>
+<p>最后，打个预防针：行远而正者吉，机浅而诈者凶。比起“术”来，还是“道”更重要。</p>
+<p>“敢将十指夸针巧，不把双眉斗画长”，不被人算计就可以了。</p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/472293322/answer/2106017916">有哪些思维透彻的历史书籍推荐？</a></p>
+<hr>
+<p>1、《南明史》，顾诚。举个例子：李自成败出北京并不是因为他入京以后迅速堕落腐化，而是相反，是因为他没有联合地主阶级完成封建化才导致的。类似于这样的观点，两册书俯拾皆是。虽然有些观点不能认同，但着实是极为优秀的作品，深入浅出，比读小说好看。</p>
+<p>2、《党员、党权与党争 : 1924—1949年中国国民党的组织形态》，王奇生。我党对国民党的打击不是优势问题，是降维打击。</p>
+<p>3、《被统治的艺术 : 中华帝国晚期的日常政治》， 宋怡明 / 钟逸明。以小见大的经典之作，老百姓如何与国家斗智斗勇。尤其是每一章节的“回目”，甚得我心。写的是被统治的艺术，书本身也是历史叙述的艺术。</p>
+<p>4、《大汉帝国在巴蜀 : 蜀汉天命的振扬与沉坠》，饶胜文。虽然本书将政权合法性对于政治的影响提到很高的位置，部分论述有失偏颇，但是瑕不掩瑜，提供了一个认识大汉巴蜀的新视角。看完本书，方知书名的高妙。又读了一遍，蜀汉政治取向以及彼可取而代之的解读有新启发，连带着明白了一系例事情（比如为什么诸葛亮会感叹只有法正能劝刘备）</p>
+<p>5、《民族与古代中国史》，傅斯年。非常薄的一本书，但分量可真不轻。尤其是夷夏东西说和五爵制，读来甚有启发。非专业的人读着也很好。</p>
+<p>6、《这受难的国度 : 死亡与美国内战》，德鲁·吉尔平·福斯特。节奏明晰，观点明确，叙述有力，对内战的反思和研究角度新颖且不乏深度，很棒。</p>
+<p>7、《中国上古史研究讲义》，顾颉刚。极为好看，通俗易懂，拍案叫绝。可以看一下我写的其中一部分内容整理。<a href="https://link.zhihu.com/?target=https%3A//book.douban.com/review/10437813/%23comments">我把本书最难的部分整理成故事了，助力各位读东汉内容</a></p>
+<p>8、《清代八股文》，邓云乡。八股文要是写好了，文章“鞭鞭见血”。</p>
+<p>9、《论三国人物》，方诗铭。有些观点虽然不认同，但是瑕不掩瑜。其中有很多观点大胆又令人信服，真是读三国深入浅出的好书。</p>
+<p>10、《中国古代国家的起源与王权的形成》，王震中。严谨厚实，深入浅出，对于国家、社会演进的内涵和外延分析的非常到位且很清晰，最后的结语高度凝练，观之甚服。</p>
+<p>11、《《易经》释梦》，吴钢。另类解读易经，把易经当历史，结合甲骨文和古文献重新阐述商周革命的过程和结果。逻辑严谨性三星，故事张力说服力四星，思考猎奇程度五星。</p>
+
+    </div>
+     
+    <div class="post-footer__meta"><p>更新于 2021-09-07</p></div> 
+    <div class="post-entry__tags"><a href="/tags/%E5%AD%A6%E4%B9%A0/" class="post-tags__link button"># 学习</a></div> 
+</article>
+
+
+    <div class="nav">
+        <div class="nav__prev">
+            
+        </div>
+        <div class="nav__next">
+            
+                <a href="/typora/" class="nav__link">
+                    <div>
+                        <div class="nav__label">
+                            Next Post
+                        </div>
+                        <div class="nav__title">
+                            typora使用技巧
+                        </div>
+                    </div>
+                    <div>
+                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
+                    </div>
+                </a>
+            
+        </div>
+    </div>
+
+
+
+    <div class="post__comments content-card" id="comment">
+        
+    <h4>评论</h4>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div id="tcomment" class="twikoo_thread"></div>
+
+
+
+    </div>
+
+
+
+</main>
+
+            <footer class="footer">
+     
+    <a href="#" class="button" id="b2t" aria-label="回到顶部" title="回到顶部">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="32" height="32">
+            <path d="M233.376 722.752L278.624 768 512 534.624 745.376 768l45.248-45.248L512 444.128zM192 352h640V288H192z" fill="currentColor"></path>
+        </svg>
+    </a>
+
+    
+
+
+    
+    
+    
+        <span id="busuanzi_container_site_uv" hidden>
+            <span></span>
+            <span id="busuanzi_value_site_uv"></span>
+            <span>Viewers</span>
+            
+                <span>|</span>
+            
+        </span>
+    
+    
+        <span id="busuanzi_container_site_pv" hidden>
+            <span></span>
+            <span id="busuanzi_value_site_pv"></span>
+            <span>Views</span>
+            
+        </span>
+    
+ 
+ 
+
+ 
+    
+        
+        <p class="footer-copyright">
+            Copyright © 2021&nbsp;-&nbsp;2021 <a href="/">杨星博客</a>
+        </p>
+    
+    
+<!--    <p>Powered by <a href="https://f000.top" target="_blank">BuildNew</a>-->
+    <p>滇ICP备2021005610号</p>
+</footer>
+
+        </div>
+         
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+    
+ 
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.css">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.4.1/dist/jquery.fancybox.min.js"></script>
+
+    <script>
+        let lazyloadT = Boolean('false'),
+            auto_fancybox = Boolean('false')
+        if (auto_fancybox) {
+            $(".post__content").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        } else {
+            $(".post__content").find("fancybox").find('img').each(function () {
+                var element = document.createElement("a");
+                $(element).attr("data-fancybox", "gallery");
+                $(element).attr("href", $(this).attr("src"));
+                if (lazyloadT) {
+                    $(element).attr("href", $(this).attr("data-srcset"));
+                }
+                $(this).wrap(element);
+            });
+        }
+    </script>
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+    
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    <script>
+        function loadComment() {
+            let e;
+            (e = document.createElement("script")).src = 'https://cdn.jsdelivr.net/npm/twikoo@0.3.2/dist/twikoo.all.min.js',
+            document.body.appendChild(e);
+            e.onload = () => {
+                twikoo.init({
+                    envId: 'twikoo-0gv0i4p12778a6e6',
+                    el: '#tcomment'
+                });
+            };
+        }
+    
+        var runningOnBrowser = typeof window !== "undefined";
+        var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
+        var supportsIntersectionObserver = runningOnBrowser && "IntersectionObserver" in window;
+    
+        setTimeout(function () {
+            if (!isBot && supportsIntersectionObserver) {
+                var comment_observer = new IntersectionObserver(function(entries) {
+                    if (entries[0].isIntersecting) {
+                        loadComment();
+                        comment_observer.disconnect();
+                    }
+                }, { threshold: [0] });
+                comment_observer.observe(document.getElementById('comment'));
+            } else {
+                loadComment();
+            }
+        }, 1);
+    </script>
+
+
+
+
+    </body>
+</html>

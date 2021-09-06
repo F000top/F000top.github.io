@@ -35,7 +35,7 @@
     <!-- meta -->
 
 
-<title>博客功能测试 | 建兴的博客</title>
+<title>博客功能测试 | 杨星博客</title>
 
 
     <meta name="keywords" content="test, 博客,blog,java,计算机">
@@ -49,7 +49,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="博客功能测试">
 <meta property="og:url" content="http://f000.top/test/index.html">
-<meta property="og:site_name" content="建兴的博客">
+<meta property="og:site_name" content="杨星博客">
 <meta property="og:description" content="博客搭建好了，测试一下功能是否正常⌛️">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://f000.top/images/test.jpg">
@@ -89,7 +89,7 @@
             <header class="header">
     <div class="header__left">
         <a href="/" class="button">
-            <span class="logo__text">建兴的博客</span>
+            <span class="logo__text">Ystar</span>
         </a>
     </div>
     <div class="header__right">
@@ -98,7 +98,11 @@
                 
                     <a href="/" class="navbar-menu button">首页</a>
                 
+                    <a href="/tags/" class="navbar-menu button">标签</a>
+                
                     <a href="/archives/" class="navbar-menu button">全部文章</a>
+                
+                    <a href="/friends/" class="navbar-menu button">友链</a>
                 
             </div>
         
@@ -114,7 +118,11 @@
                 
                     <a href="/" class="dropdown-menu button">首页</a>
                 
+                    <a href="/tags/" class="dropdown-menu button">标签</a>
+                
                     <a href="/archives/" class="dropdown-menu button">全部文章</a>
+                
+                    <a href="/friends/" class="dropdown-menu button">友链</a>
                 
             </div>
         
@@ -145,27 +153,31 @@
 </div>
 
 
-    <aside class="post-side">
-        <div class="post-side__toc">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E6%8F%92%E5%85%A5%E6%B5%8B%E8%AF%95%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">图片插入测试：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A5%BF%E7%93%9C%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">西瓜视频测试：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">哔哩哔哩视频测试：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%B5%8B%E8%AF%95%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">网易云音乐测试：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown%E6%B5%8B%E8%AF%95"><span class="toc-number">5.</span> <span class="toc-text">Markdown测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8%EF%BC%9A"><span class="toc-number">5.1.</span> <span class="toc-text">有序列表：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8%EF%BC%9A"><span class="toc-number">5.2.</span> <span class="toc-text">无序列表：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E4%BA%AE%EF%BC%9A"><span class="toc-number">5.3.</span> <span class="toc-text">高亮：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E6%A0%87%E5%92%8C%E4%B8%8B%E6%A0%87%EF%BC%9A"><span class="toc-number">5.4.</span> <span class="toc-text">上标和下标：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%9D%97%E5%92%8C%E4%BB%A3%E7%A0%81%E5%9D%97%EF%BC%9A"><span class="toc-number">5.5.</span> <span class="toc-text">区块和代码块：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC%EF%BC%9A"><span class="toc-number">5.6.</span> <span class="toc-text">表格：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E8%89%B2%EF%BC%9A"><span class="toc-number">5.7.</span> <span class="toc-text">变色：</span></a></li></ol></li></ol>
-        </div>
-    </aside>
-    <a class="btn-toc button" id="btn-toc" tabindex="0">
-        <svg viewBox="0 0 1024 1024" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
-            <path d="M128 256h64V192H128zM320 256h576V192H320zM128 544h64v-64H128zM320 544h576v-64H320zM128 832h64v-64H128zM320 832h576v-64H320z" fill="currentColor"></path>
-        </svg>
-    </a>
-    <div class="toc-menus" id="toc-menus">
-        <div class="toc-title">文章目录</div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E6%8F%92%E5%85%A5%E6%B5%8B%E8%AF%95%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">图片插入测试：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A5%BF%E7%93%9C%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">西瓜视频测试：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E8%A7%86%E9%A2%91%E6%B5%8B%E8%AF%95%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">哔哩哔哩视频测试：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E6%B5%8B%E8%AF%95%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">网易云音乐测试：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown%E6%B5%8B%E8%AF%95"><span class="toc-number">5.</span> <span class="toc-text">Markdown测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8%EF%BC%9A"><span class="toc-number">5.1.</span> <span class="toc-text">有序列表：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8%EF%BC%9A"><span class="toc-number">5.2.</span> <span class="toc-text">无序列表：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E4%BA%AE%EF%BC%9A"><span class="toc-number">5.3.</span> <span class="toc-text">高亮：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E6%A0%87%E5%92%8C%E4%B8%8B%E6%A0%87%EF%BC%9A"><span class="toc-number">5.4.</span> <span class="toc-text">上标和下标：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%9D%97%E5%92%8C%E4%BB%A3%E7%A0%81%E5%9D%97%EF%BC%9A"><span class="toc-number">5.5.</span> <span class="toc-text">区块和代码块：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC%EF%BC%9A"><span class="toc-number">5.6.</span> <span class="toc-text">表格：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E8%89%B2%EF%BC%9A"><span class="toc-number">5.7.</span> <span class="toc-text">变色：</span></a></li></ol></li></ol>
-    </div>
 
-
-<article class="post post__with-toc content-card">
+<article class="post content-card">
     <div class="post__header">
     
         <div class="post-thumbnail" style="background-image: url('/images/test.jpg');"></div>
     
+
+    <div class="post__expire" id="post-expired-notify">
+        <p>
+            本文最后更新于 &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; 天前，文中部分描述可能已经过时。
+        </p>
+    </div>
+    <script>
+        (() => {
+            var update = Date.parse("2021-08-20"),
+                date = new Date(),
+                now = date.getTime(),
+                expire = now - update,
+                expire_days = Math.floor(expire/(24*3600*1000));
+            if (expire_days >= 50) {
+                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
+                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
+            }
+        })();
+    </script>
 </div>
     <div class="post__content">
         <hr>
@@ -252,20 +264,7 @@
 </blockquote>
 
     </div>
-    
-    <div class="post__license">
-        <p>
-            <strong>本文作者：</strong>buildnew
-        </p>
-        <p>
-            <strong>
-                本文链接：
-            </strong>
-            <a href="http://f000.top/test/">http://f000.top/test/</a>
-        </p>
-        
-    </div>
- 
+     
     <div class="post-footer__meta"><p>更新于 2021-08-20</p></div> 
     <div class="post-entry__tags"><a href="/tags/test/" class="post-tags__link button"># test</a></div> 
 </article>
@@ -310,7 +309,7 @@
 
 
 
-    <div class="post__comments post__with-toc content-card" id="comment">
+    <div class="post__comments content-card" id="comment">
         
     <h4>评论</h4>
     
@@ -372,7 +371,7 @@
     
         
         <p class="footer-copyright">
-            Copyright © 2021&nbsp;-&nbsp;2021 <a href="/">建兴的博客</a>
+            Copyright © 2021&nbsp;-&nbsp;2021 <a href="/">杨星博客</a>
         </p>
     
     
