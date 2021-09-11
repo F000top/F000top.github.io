@@ -35,7 +35,7 @@
     <!-- meta -->
 
 
-<title>分类标签 | 杨星博客</title>
+<title>categories | 杨星博客</title>
 
 
     <meta name="keywords" content="博客,blog,java,计算机">
@@ -45,15 +45,15 @@
 
     <!-- OpenGraph -->
  
-    <meta name="description" content="#学习">
+    <meta name="description" content="杨星的个人博客">
 <meta property="og:type" content="website">
-<meta property="og:title" content="分类标签">
-<meta property="og:url" content="http://f000.top/tags/index.html">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://f000.top/categories/index.html">
 <meta property="og:site_name" content="杨星博客">
-<meta property="og:description" content="#学习">
+<meta property="og:description" content="杨星的个人博客">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-06T17:51:02.282Z">
-<meta property="article:modified_time" content="2021-09-06T17:51:02.282Z">
+<meta property="article:published_time" content="2021-09-11T15:04:11.000Z">
+<meta property="article:modified_time" content="2021-09-11T15:05:36.279Z">
 <meta property="article:author" content="BuildNew">
 <meta property="article:tag" content="博客,blog,java,计算机">
 <meta name="twitter:card" content="summary_large_image">
@@ -64,11 +64,6 @@
  
 
     
-    
-        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/default.css" media="none" onload="this.media='all'">
-        
-    
-
     
     
 
@@ -132,85 +127,35 @@
 </header>
 
 
-            <main class="main">
-    
-
-<div class="post-title">
-    <h1 class="post-title__text">
-        分类标签
-    </h1>
-    <div class="post-title__meta">
-        <a href="/archives/2021/09/" class="post-meta__date button">2021-09-07</a>
+    <div class="cover">
+        <div class="cover__logo">
+            
+                <h1>杨星博客</h1>
+            
+        </div>
         
+        
+            <div class="cover__intro">
+                <p>人生苦短，及时行乐</p>
  
+            </div>
+        
+    </div>
+
+            
+<main class="main">
+    
+        
+            <div class="all-categories content-card">
+                
+                    <h2>
+                        categories
+                    </h2>
+                
+                
+            </div>
         
     
-    
-
-
- 
-
- 
-    </div>
-</div>
-
-
-
-<article class="post content-card">
-    <div class="post__header">
-    <div class="post__expire" id="post-expired-notify">
-        <p>
-            本文最后更新于 &lt;span id=&#34;expire-date&#34;&gt;&lt;/span&gt; 天前，文中部分描述可能已经过时。
-        </p>
-    </div>
-    <script>
-        (() => {
-            var update = Date.parse("2021-09-07"),
-                date = new Date(),
-                now = date.getTime(),
-                expire = now - update,
-                expire_days = Math.floor(expire/(24*3600*1000));
-            if (expire_days >= 50) {
-                document.querySelectorAll('#expire-date')[0].innerHTML = expire_days;
-                document.querySelectorAll('#post-expired-notify')[0].style.display = 'block';
-            }
-        })();
-    </script>
-</div>
-    <div class="post__content">
-        <p><a href="http://f000.top/tags/%E5%AD%A6%E4%B9%A0/">#学习</a></p>
-
-    </div>
-     
-    <div class="post-footer__meta"><p>更新于 2021-09-07</p></div> 
-    <div class="post-entry__tags"></div> 
-</article>
-
-
-
-
-    <div class="post__comments content-card" id="comment">
-        
-    <h4>评论</h4>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div id="tcomment" class="twikoo_thread"></div>
-
-
-
-    </div>
-
-
-
 </main>
 
             <footer class="footer">
@@ -326,60 +271,6 @@
  
 
  
-
-
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-
-    
-    
-    
-    <script>
-        function loadComment() {
-            let e;
-            (e = document.createElement("script")).src = 'https://cdn.jsdelivr.net/npm/twikoo@0.3.2/dist/twikoo.all.min.js',
-            document.body.appendChild(e);
-            e.onload = () => {
-                twikoo.init({
-                    envId: 'twikoo-0gv0i4p12778a6e6',
-                    el: '#tcomment'
-                });
-            };
-        }
-    
-        var runningOnBrowser = typeof window !== "undefined";
-        var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
-        var supportsIntersectionObserver = runningOnBrowser && "IntersectionObserver" in window;
-    
-        setTimeout(function () {
-            if (!isBot && supportsIntersectionObserver) {
-                var comment_observer = new IntersectionObserver(function(entries) {
-                    if (entries[0].isIntersecting) {
-                        loadComment();
-                        comment_observer.disconnect();
-                    }
-                }, { threshold: [0] });
-                comment_observer.observe(document.getElementById('comment'));
-            } else {
-                loadComment();
-            }
-        }, 1);
-    </script>
 
 
 
