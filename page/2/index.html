@@ -1,0 +1,386 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>杨星博客 - Later equals never</title><meta name="keywords" content="博客,blog,java,计算机"><meta name="author" content="ystar"><meta name="copyright" content="ystar"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="杨星的个人博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="杨星博客">
+<meta property="og:url" content="http://f000.top/page/2/index.html">
+<meta property="og:site_name" content="杨星博客">
+<meta property="og:description" content="杨星的个人博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://f000.top/images/tou.jpg">
+<meta property="article:author" content="ystar">
+<meta property="article:tag" content="博客,blog,java,计算机">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://f000.top/images/tou.jpg"><link rel="shortcut icon" href="/images/favicon.ico"><link rel="canonical" href="http://f000.top/page/2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0946e5886f5fe03a8322fff8f0ae5b9f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '杨星博客',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-04-26 07:55:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/images/tou.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 留言板</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/images/banner-image.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">杨星博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">杨星博客</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/F000top" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/goodmale@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/typora/" title="typora使用技巧"><img class="post_bg" src="https://img-blog.csdnimg.cn/img_convert/5d6d4553770106fa98d1a6bb2125ef8a.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="typora使用技巧"></a></div><div class="recent-post-info"><a class="article-title" href="/typora/" title="typora使用技巧">typora使用技巧</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-08-20T04:17:18.000Z" title="发表于 2021-08-20 12:17:18">2021-08-20</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF%E7%9B%B8%E5%85%B3/">技术相关</a></span></div><div class="content">
+最简洁的编辑器 😏
+
+加粗
+
+Ctrl+B
+下划线
+
+Ctrl+U
+斜体
+
+Ctrl+I
+分割线
+
+先输入三个及三个以上减号，敲回车
+代码块
+
+12System.out.println(&quot;怎么输入代码块？&quot;);System.out.println(&quot;先输入``` 然后敲回车&quot;);
+表情的使用
+
+输入冒号:  后面就会有提示了
+
+无序列表
+
+输入一个- 然后空格后敲回车
+
+
+
+
+按下Tab向里缩进
+
+
+
+有序列表
+
+输入数字. 然后空格后敲回车
+
+俄罗斯
+
+莫斯科
+
+
+美国
+
+华盛顿
+纽约
+芝加哥
+
+
+中国
+
+北京
+上海
+深圳
+
+
+
+Ctrl+K 插入超链接
+Typora常用好看主题推荐!!!
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/FrontEnd/" title="前端学习笔记　"><img class="post_bg" src="/images/f.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端学习笔记　"></a></div><div class="recent-post-info"><a class="article-title" href="/FrontEnd/" title="前端学习笔记　">前端学习笔记　</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-08-19T11:07:32.000Z" title="发表于 2021-08-19 19:07:32">2021-08-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a></span></div><div class="content">
+不学前端怎么改自己的blog 😎
+
+第一天
+
+时间：2021年8月20日11:26:06​
+
+vscode安装：
+
+
+vscode下载地址：https://code.visualstudio.com/
+
+
+
+
+vscode插件推荐
+
+
+Chinese：实现简体中文
+
+
+
+open in browser：实现右击可以在浏览器预览
+
+
+
+
+
+
+几个小细节
+
+12345678&lt;!DOCTYPE html&gt; 	文档类型声明标签，告诉浏览器这个页面才去HTML5版本来显示页面&lt;html lang=&quot;zh-CN&quot;&gt;    告诉浏览器或者搜索引擎，这个是一个中文网站，本站采用中文来显示&lt;meta charset=&quot;UTF-8&quot;&gt;      必须写，UTF-8来保存文字，如果不写就会乱码
+HTML常用标签
+
+标题标签
+HTML提供了6个等级的网页标题
+
+h是单词head的缩写
+特点
+1、变粗变大
+2、独占一行
+标签语义
+作为标题使用，并且根据重要性递减
+段落标签
+
+p是paragraph的缩写
+两个段落之间有空格
+换行标签 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="GIT学习笔记"><img class="post_bg" src="/images/g.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GIT学习笔记"></a></div><div class="recent-post-info"><a class="article-title" href="/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="GIT学习笔记">GIT学习笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-08-12T06:33:48.000Z" title="发表于 2021-08-12 14:33:48">2021-08-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a></span></div><div class="content">
+Git和GitHub居然不是同一个东西❓
+
+前言：
+作为计算机专业的学生，早就听说过了GitHub的大名，我尝试过注册了几次，但是不知道为什么网络总是会出现错误，打不开，就放弃了。直到我找到v2rayN，用上了稳定的梯子之后，才开始深入了解。
+Git和GitHub其实是两个东西！我也是学习过之后才发现的。
+
+我学习的课程是bilibli上up主狂神说录制的，比较短小，讲课风格也很不错！
+
+笔记
+1、集中版本控制
+缺点：用户本地只有自己以前同步的版本，一旦服务器挂了就有点麻烦
+代表： SVN
+2、分布式版本控制
+每个人都有全部代码（有安全隐患，怕员工跑路，哈哈哈）
+
+3、git是目前最先进的分布式版本控制系统
+4、git历史
+linux内核维护工作者觉得提交补丁和保存归档是很繁琐的事务——2002年开始启用Bitkeeper来管理和维护代码——后面Bitkeeper结束了和linux的合作关系——然后Linux的缔造者Linus Torvalds花了两个星期搞出来了git
+
+5、git的及环境配置
+git bash ：unix与linux风格
+git cmd：windows风格
+git ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/test/" title="博客功能测试"><img class="post_bg" src="/images/test.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="博客功能测试"></a></div><div class="recent-post-info"><a class="article-title" href="/test/" title="博客功能测试">博客功能测试</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-08-11T18:40:20.000Z" title="发表于 2021-08-12 02:40:20">2021-08-12</time></span></div><div class="content">
+博客搭建好了，测试一下功能是否正常⌛️
+
+图片插入测试：
+
+西瓜视频测试：
+
+哔哩哔哩视频测试：
+ 
+网易云音乐测试：
+
+Markdown测试
+有序列表：
+方法：（数字. +回车）
+
+有序列表one
+有序列表two
+有序列表three
+
+无序列表：
+方法：（- +空格）
+例如：
+
+第一个
+
+(按住tab键可以向里面缩进)
+
+第三个缩进
+
+第四个缩进
+
+
+
+
+
+
+第二个
+第三个
+
+高亮：
+== （） ==需要高亮的部分夹在两个等号中间
+上标和下标：
+
+下标： 夹在~~两个小波浪线中间 例如： H2O
+上标:  夹在~~两个小波浪线中间 例如:  X5
+
+区块和代码块：
+
+区块(大于号+空格)
+
+
+按回车下一行会继续添加区块
+
+
+代码块（```）
+
+123public static void main(String[] args)&#123;    System.out.println(&quot;hello world&quot;)&#125;
+表格：
+方法：几个 ||||就可以出来
+
+
+
+姓名
+性别
+身高
+体重
+
+
+
+
+杨建兴
+男
+175cm
+50kg
+
+
+
+变色：
+方法：用检查元素 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/images/tou.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ystar</div><div class="author-info__description">杨星的个人博客</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/F000top"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/F000top" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/goodmale@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E7%9B%B8%E5%85%B3/"><span class="card-category-list-name">技术相关</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%BE%8E%E9%A3%9F/"><span class="card-category-list-name">美食</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"><span class="card-category-list-name">计算机</span><span class="card-category-list-count">2</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Git/" style="font-size: 1.15em; color: rgb(112, 143, 135)">Git</a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.15em; color: rgb(99, 151, 91)">前端</a><a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 1.15em; color: rgb(7, 71, 184)">工具</a><a href="/tags/%E6%9D%82%E8%B0%88/" style="font-size: 1.15em; color: rgb(46, 113, 130)">杂谈</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">四月 2022</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/03/"><span class="card-archive-list-date">三月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/02/"><span class="card-archive-list-date">二月 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/08/"><span class="card-archive-list-date">八月 2021</span><span class="card-archive-list-count">4</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">14</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2021-08-11T16:00:00.000Z"></div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-04-25T23:54:59.939Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By ystar</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    window.typed = new Typed("#subtitle", {
+      strings: "去尝试",
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: false,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '去'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
