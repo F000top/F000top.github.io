@@ -1,0 +1,297 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>OsLab | 杨星博客</title><meta name="keywords" content="计算机基础"><meta name="author" content="yagnstar"><meta name="copyright" content="yagnstar"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Lab1 理论部分 操作系统的启动 为什么用汇编语言，不用C语言？——可以严格控制要执行什么 1、打开电源计算机执行的第一个指令是什么？ 实模式和保护模式对应，；两种模式的寻址方式不一样，cs左移4位+IP  2、引导扇区 0x7c00处，就是从磁盘引导扇区读入的512字节 bootsect.s（翻译就是引导扇区） .s是什么文件？ ——汇编代码 1234567mov ax, #BOOTSEG &#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OsLab">
+<meta property="og:url" content="https://yangstar23.github.io/OsLab/index.html">
+<meta property="og:site_name" content="杨星博客">
+<meta property="og:description" content="Lab1 理论部分 操作系统的启动 为什么用汇编语言，不用C语言？——可以严格控制要执行什么 1、打开电源计算机执行的第一个指令是什么？ 实模式和保护模式对应，；两种模式的寻址方式不一样，cs左移4位+IP  2、引导扇区 0x7c00处，就是从磁盘引导扇区读入的512字节 bootsect.s（翻译就是引导扇区） .s是什么文件？ ——汇编代码 1234567mov ax, #BOOTSEG &#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yangstar23.github.io/images/tou.jpg">
+<meta property="article:published_time" content="2022-04-25T11:08:37.000Z">
+<meta property="article:modified_time" content="2022-09-10T06:23:11.767Z">
+<meta property="article:author" content="yagnstar">
+<meta property="article:tag" content="计算机基础">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yangstar23.github.io/images/tou.jpg"><link rel="shortcut icon" href="/images/favicon.ico"><link rel="canonical" href="https://yangstar23.github.io/OsLab/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0946e5886f5fe03a8322fff8f0ae5b9f";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'OsLab',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-09-10 14:23:11'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/images/tou.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 留言板</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">杨星博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 留言板</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">OsLab</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-04-25T11:08:37.000Z" title="发表于 2022-04-25 19:08:37">2022-04-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-09-10T06:23:11.767Z" title="更新于 2022-09-10 14:23:11">2022-09-10</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="OsLab"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>Lab1</h1>
+<h3 id="理论部分">理论部分</h3>
+<p>操作系统的启动</p>
+<p>为什么用汇编语言，不用C语言？——可以严格控制要执行什么</p>
+<h4 id="1、打开电源计算机执行的第一个指令是什么？">1、打开电源计算机执行的第一个指令是什么？</h4>
+<p>实模式和保护模式对应，；两种模式的寻址方式不一样，cs左移4位+IP</p>
+<p><img src="/OsLab/image-20220425200544223.png" alt="image-20220425200544223"></p>
+<h4 id="2、引导扇区">2、引导扇区</h4>
+<p>0x7c00处，就是从磁盘引导扇区读入的512字节</p>
+<p>bootsect.s（翻译就是引导扇区）</p>
+<p>.s是什么文件？ ——汇编代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mov ax, #BOOTSEG //也就是ax=0x07c0v</span><br><span class="line">mov ds, ax</span><br><span class="line">mov ax, #INITSEG</span><br><span class="line">MOV ES ,AX</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">BOOTSEG=0X07C0</span><br></pre></td></tr></table></figure>
+<h2 id="操作系统的启动">操作系统的启动</h2>
+<p>计算机的工作：取指令——执行指令</p>
+<p>通电后第一步干的就是：把操作系统从磁盘，拿到内存里面</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//setup.s</span><br><span class="line">MOV AH ,#0X88 int 0x15 mov [2],ax... //获取内存的大小</span><br></pre></td></tr></table></figure>
+<h1>实验部分</h1>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">怎么解压</span><br><span class="line">tar -zxvf </span><br></pre></td></tr></table></figure>
+<h2 id="实验环境">实验环境</h2>
+<ol>
+<li>
+<p>x86模拟器bochs</p>
+<p>Bochs 是一个免费且开放源代码的 IA-32（x86）架构 PC 机模拟器。在它模拟出的环境中可以运行 Linux、DOS 和各种版本的 Windows 等多种操作系统。Bochs 的是模拟器，其原理决定了它的运行效率会低于虚拟机。</p>
+<p><a target="_blank" rel="noopener" href="https://bochs.sourceforge.io/">bochs主页是</a></p>
+</li>
+<li>
+<p>GCC编译器</p>
+<p>GCC 是和 Linux 一起成长起来的编译器。Linux 最初的版本就是由 GCC 编译的。现在 GCC 也是在自由软件领域应用最广泛的编译器。</p>
+</li>
+<li>
+<p>GDB 调试器</p>
+<p>是 GCC 编译器的兄弟。做为自由软件领域几乎是唯一的调试器，它秉承了 Unix 类操作系统的一贯风格，采用纯命令行操作，有点儿类似 dos 下的 debug。</p>
+</li>
+<li>
+<p>Ubuntu</p>
+<p>也许不是目前最好用的 Linux 桌面发行版，但它一定是最流行的。主要特点是易用，非常的易用。现在，已经有越来越多的人开始用 Ubuntu 完全代替 Windows，享受更加自由、安全、守法的感觉。</p>
+</li>
+</ol>
+<h2 id="实验环境熟悉">实验环境熟悉</h2>
+<p>1、解压</p>
+<p><img src="/OsLab/image-20220426071923478.png" alt="image-20220426071923478"></p>
+<p>2、run脚本</p>
+<p><img src="/OsLab/image-20220426072032249.png" alt="image-20220426072032249">run 是运行 bochs 的脚本命令。</p>
+<p>运行后 bochs 会自动在它的虚拟软驱 A 和虚拟硬盘上各挂载一个镜像文件，软驱上挂载是 linux-0.11/Image，硬盘上挂载的是 hdc-0.11.img。</p>
+<p>因为 bochs 配置文件中的设置是从软驱 A 启动，所以 Linux 0.11 会被自动加载。</p>
+<p>而 Linux 0.11 会驱动硬盘，并 mount 硬盘上的文件系统，也就是将 hdc-0.11.img 内镜像的文件系统挂载到 0.11 系统内的根目录 —— <code>/</code>。在 0.11 下访问文件系统，访问的就是 hdc-0.11.img 文件内虚拟的文件系统。</p>
+<p>3、bochs 目录</p>
+<p><img src="/OsLab/image-20220426072137909.png" alt="image-20220426072137909"></p>
+<p>bochs 目录下是与 bochs 相关的执行文件、数据文件和配置文件。</p>
+<p>4、hdc-0.11.img 文件</p>
+<p>hdc-0.11.img 文件的格式是 Minix 文件系统的镜像。</p>
+<p>Linux 所有版本都支持这种格式的文件系统，所以可以直接在宿主 Linux 上通过 mount 命令访问此文件内的文件，达到宿主系统和 bochs 内运行的 Linux 0.11 之间交换文件的效果。</p>
+<p>Windows 下目前没有（或者是还没发现）直接访问 Minix 文件系统的办法，所以要借助于 fdb.img，这是一个 1.44M 软盘的镜像文件，内部是 FAT12 文件系统。将它挂载到 bochs 的软驱 B，就可以在 0.11 中访问它。而通过 filedisk 或者 WinImage，可以在 Windows 下访问它内部的文件。</p>
+<p>hdc-0.11.img 内包含有：</p>
+<ul>
+<li>Bash shell；</li>
+<li>一些基本的 Linux 命令、工具，比如 cp、rm、mv、tar；</li>
+<li>vi 编辑器；</li>
+<li>gcc 1.4 编译器，可用来编译标准 C 程序；</li>
+<li>as86 和 ld86；</li>
+<li>Linux 0.11 的源代码，可在 0.11 下编译，然后覆盖现有的二进制内核。</li>
+</ul>
+<p><img src="/OsLab/image-20220426072252261.png" alt="image-20220426072252261"></p>
+<p>5、编译内核</p>
+<p>进入linux-0.11目录，然后执行make</p>
+<p><img src="/OsLab/image-20220426072439564.png" alt="image-20220426072439564"></p>
+<p>产生Image 文件</p>
+<p>oslab 工作在一个宿主操作系统之上，我们使用的 Linux，在宿主操作系统之上完成对 Linux 0.11 的开发、修改和编译之后，在 linux-0.11 目录下会生产一个名为 <strong>Image</strong> 的文件，它就是编译之后的目标文件。</p>
+<p>该文件内已经包含引导和所有内核的二进制代码。如果拿来一张软盘，从它的 0 扇区开始，逐字节写入 Image 文件的内容，就可以用这张软盘启动一台真正的计算机，并进入 Linux 0.11 内核。</p>
+<blockquote>
+<p>oslab 采用 bochs 模拟器加载这个 Image 文件，模拟执行 Linux 0.11，这样省却了重新启动计算机的麻烦。</p>
+</blockquote>
+<p>6、运行</p>
+<p>oslab下运行 run脚本</p>
+<p><img src="/OsLab/image-20220426072648341.png" alt="image-20220426072648341"></p>
+<p>此时bochs运行Linux-0.11成功！hello linux-0.11!</p>
+<p>7、文件交换</p>
+<p>接下来讲解一下 Ubuntu 和 Linux 0.11 之间的文件交换如何启动。</p>
+<blockquote>
+<p>开始设置文件交换之前，务必关闭所有的 Bochs 进程。</p>
+</blockquote>
+<p>oslab 下的 <code>hdc-0.11-new.img</code> 是 0.11 内核启动后的根文件系统镜像文件，相当于在 bochs 虚拟机里装载的硬盘。在 Ubuntu 上访问其内容的方法是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/oslab/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动挂载脚本</span></span><br><span class="line">$ sudo ./mount-hdc</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>大家使用 sudo 时，password 是 <code>shiyanlou</code>，也有可能不会提示输入密码。</p>
+</blockquote>
+<p>之后，hdc 目录下就是和 0.11 内核一模一样的文件系统了，可以读写任何文件（可能有些文件要用 sudo 才能访问）。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入挂载到 Ubuntu 上的目录</span></span><br><span class="line">$ <span class="built_in">cd</span> ~/oslab/hdc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看内容</span></span><br><span class="line">$ ls -al</span><br></pre></td></tr></table></figure>
+<p>读写完毕，不要忘了卸载这个文件系统：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/oslab/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载</span></span><br><span class="line">$ sudo umount hdc</span><br></pre></td></tr></table></figure>
+<p>经过 <code>sudo ./mount-hdc</code> 这样处理以后，我们可以在 Ubuntu 的 hdc 目录下创建一个 xxx.c 文件，然后利用 Ubuntu 上的编辑工具（如 gedit 等）实现对 xxx.c 文件的编辑工作，在编辑保存以后。</p>
+<p>执行 <code>sudo umount hdc</code> 后，再进入 Linux 0.11（即 run 启动 bochs 以后）就会看到这个 xxx.c（即如下图所示），这样就避免了在 Linux 0.11 上进行编辑 xxx.c 的麻烦，因为 Linux 0.11 作为一个很小的操作系统，其上的编辑工具只有 vi，使用起来非常不便。</p>
+<p><img src="/OsLab/userid19614labid568time1423993300541.png" alt="图片描述信息"></p>
+<p>图 2 用 Ubuntu 和 Linux 0.11 完成文件交换以后再启动 Linux 0.11 以后</p>
+<p>另外在 Linux 0.11 上产生的文件，如后面实验中产生的 <code>process.log</code> 文件，可以按这种方式 “拿到” Ubuntu 下用 python 程序进行处理，当然这个 python 程序在 Linux 0.11 上显然是不好使的，因为 Linux 0.11 上搭建不了 python 解释环境。</p>
+<blockquote>
+<p>注意 1：不要在 0.11 内核运行的时候 mount 镜像文件，否则可能会损坏文件系统。同理，也不要在已经 mount 的时候运行 0.11 内核。</p>
+<p>注意 2：在关闭 Bochs 之前，需要先在 0.11 的命令行运行 “sync”，确保所有缓存数据都存盘后，再关闭 Bochs。</p>
+</blockquote>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a></div><div class="post_share"><div class="social-share" data-image="/images/tou.jpg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/ElectronicNote/"><img class="prev-cover" src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">ElectronicNote</div></div></a></div><div class="next-post pull-right"><a href="/music/"><img class="next-cover" src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">乐理知识</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/images/tou.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">yagnstar</div><div class="author-info__description">杨星的个人博客</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">19</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/F000top"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/F000top" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/goodmale@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Lab1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%86%E8%AE%BA%E9%83%A8%E5%88%86"><span class="toc-number">1.0.1.</span> <span class="toc-text">理论部分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E6%89%93%E5%BC%80%E7%94%B5%E6%BA%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%89%A7%E8%A1%8C%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%8C%87%E4%BB%A4%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">1、打开电源计算机执行的第一个指令是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E5%BC%95%E5%AF%BC%E6%89%87%E5%8C%BA"><span class="toc-number">1.0.1.2.</span> <span class="toc-text">2、引导扇区</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%90%AF%E5%8A%A8"><span class="toc-number">1.1.</span> <span class="toc-text">操作系统的启动</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">实验部分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="toc-number">2.1.</span> <span class="toc-text">实验环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%E7%86%9F%E6%82%89"><span class="toc-number">2.2.</span> <span class="toc-text">实验环境熟悉</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By yagnstar</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'twikoo-0gv0i4p12778a6e6',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.vemoji)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'twikoo-0gv0i4p12778a6e6',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      document.getElementById('twikoo-count').innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
