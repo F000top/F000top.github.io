@@ -1,9 +1,6 @@
 @font-face{
-    font-family: 'FiraCode';
+    font-family: 'WenDaoLingFeiXiaoKai-2';
     font-display: swap;
     src: url('../font/WenDaoLingFeiXiaoKai-2.ttf') format("truetype");
 }
 
-body {
-    font-family: "Microsoft YaHei", 'WenDaoLingFeiXiaoKai-2';
-}
